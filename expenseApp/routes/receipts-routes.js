@@ -13,9 +13,7 @@ const ensureLogin = require("connect-ensure-login");
 const passport = require("passport");
 
 router.get("/settings", ensureLogin.ensureLoggedIn(), (req, res) => {
-  console.log(req.user, "this is the user");
   Receipt.find({ user: req.user._id }).then((receipt) => {
-    console.log(receipt);
     res.render("items/settings", { receipt: receipt });
   });
 });
@@ -23,9 +21,8 @@ router.get("/settings", ensureLogin.ensureLoggedIn(), (req, res) => {
 router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
   const { title, description, date } = req.body;
   const imgPath = req.file.url;
-  //console.log(imgPath, "this is the image path");
+
   const imgName = req.file.originalname;
-  //console.log(imgName);
 
   Receipt.create({
     title,
@@ -36,7 +33,6 @@ router.post("/settings", uploadCloud.single("photo"), (req, res, next) => {
     user: req.user._id,
   })
     .then((receipt) => {
-      //console.log(receipt);
       res.redirect("/settings");
     })
     .catch((error) => {

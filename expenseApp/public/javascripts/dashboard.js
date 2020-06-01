@@ -16,8 +16,7 @@ function windowOnClick(event) {
   if (event.target === modal) {
     toggleModal();
   }
-  if (event.target === modalEdit){
-    console.log("edit modal");
+  if (event.target === modalEdit) {
     toggleEditModal();
   }
 }
@@ -27,12 +26,10 @@ closeButton.addEventListener("click", toggleEditModal);
 window.addEventListener("click", windowOnClick);
 triggerEdit.addEventListener("click", toggleEditModal);
 
-
 let expensePrice = document.querySelectorAll(".expenseSum");
-console.log(expensePrice[3]);
+
 let sortedPrice = expenseObject
   .map((val) => {
     return Number(val.price);
   })
   .sort((a, b) => a - b);
-console.log(sortedPrice);

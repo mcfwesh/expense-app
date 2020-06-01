@@ -26,7 +26,6 @@ var currencyCalc = document.querySelector(".container-calculator");
 
 function revealCalc() {
   currencyCalc.classList.toggle("reveal-calc");
-  console.log("reveal calc");
 }
 
 function convertCurrency(event) {

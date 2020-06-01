@@ -98,7 +98,6 @@ router.get("/logout", (req, res) => {
 //VIP AREA
 
 router.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
-  console.log(req.user);
   Expense.find({ user: req.user._id })
     .then((expenseData) => {
       res.render("auth/dashboard", {
