@@ -10,7 +10,7 @@ const uploadCloud = require("../config/cloudinary.js");
 const User = require("../models/User");
 
 // Bcrypt to encrypt passwords
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
 // Passport
