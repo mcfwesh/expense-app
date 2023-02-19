@@ -22,7 +22,6 @@ hbs.handlebars.registerHelper("formatDate", function (date) {
 
 //Session Stuff
 const session = require("express-session");
-const MongoStore = require("connect-mongo")(session);
 
 // require passport and the local strategy
 const ensureLogin = require("connect-ensure-login");
@@ -33,21 +32,9 @@ const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/User");
 
 mongoose
-  .connect(
-    // "mongodb://localhost/expenseapp",
-    "mongodb://heroku_kgk0ltwq:j69f2p3cfojihlvep2jo7fg34d@ds235417.mlab.com:35417/heroku_kgk0ltwq",
-    {
-      useNewUrlParser: true,
-    }
-  )
-  .then((x) => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch((err) => {
-    console.error("Error connecting to mongo", err);
-  });
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("Connected"))
+  .catch((err) => console.log(err));
 
 const app_name = require("./package.json").name;
 const debug = require("debug")(
@@ -156,6 +143,6 @@ app.use("/", receiptsRoutes);
 
 module.exports = app;
 
-app.listen(3000, function () {
-  console.log("Example app listening on port 3000test node!");
+app.listen(process.env.PORT, function () {
+  console.log(`Listening on port ${process.env.PORT} `);
 });
