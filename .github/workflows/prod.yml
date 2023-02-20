@@ -59,10 +59,11 @@ jobs:
           flags: "g"
 
       - name: Beanstalk Deploy for app
-        uses: einaregilsson/beanstalk-deploy@v16
+        uses: einaregilsson/beanstalk-deploy@v21
         with:
           aws_access_key: ${{secrets.ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.SECRET_ACCESS_KEY}}
+          use_existing_version_if_available: false
           application_name: expense-app2
           environment_name: Expenseapp2-env
           region: us-east-1

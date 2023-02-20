@@ -2,6 +2,7 @@
   "name": "expenseapp",
   "version": "0.0.0",
   "private": true,
+  "main": "./bin/www",
   "scripts": {
     "start": "node ./bin/www",
     "dev": "DEBUG=expenseapp:* nodemon ./bin/www",
@@ -33,7 +34,6 @@
   "devDependencies": {
     "nodemon": "^1.12.1"
   },
-  "main": "app.js",
   "author": "",
   "license": "ISC",
   "description": ""
