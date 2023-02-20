@@ -64,7 +64,7 @@ jobs:
           aws_access_key: ${{secrets.ACCESS_KEY_ID}}
           aws_secret_key: ${{secrets.SECRET_ACCESS_KEY}}
           application_name: expense-app
-          environment_name: expense-app-env
+          environment_name: Expenseapp-env
           region: us-east-2
           version_label: "version-label-${{ steps.format-time.outputs.replaced }}"
           deployment_package: deploy.zip
