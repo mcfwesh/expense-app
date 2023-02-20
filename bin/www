@@ -32,12 +32,12 @@ server.on("error", (error) => {
   switch (error.code) {
     case "EACCES":
       console.error(
-        `Port ${process.env.PORT || 5555} requires elevated privileges`
+        `Port 5555 requires elevated privileges`
       );
       process.exit(1);
       break;
     case "EADDRINUSE":
-      console.error(`Port ${process.env.PORT || 5555} is already in use`);
+      console.error(`Port  5555 is already in use`);
       process.exit(1);
       break;
     default:
@@ -45,6 +45,6 @@ server.on("error", (error) => {
   }
 });
 
-server.listen(process.env.PORT || 5555, () => {
-  console.log(`Listening on http://localhost:${process.env.PORT || 5555}`);
+server.listen( 5555, () => {
+  console.log(`Listening on http://localhost:5555`);
 });

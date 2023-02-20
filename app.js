@@ -143,6 +143,6 @@ app.use("/", receiptsRoutes);
 
 module.exports = app;
 
-app.listen(process.env.PORT || 5555, function () {
-  console.log(`Listening on port ${process.env.PORT || 5555} `);
+app.listen(5555, function () {
+  console.log(`Listening on port 5555 `);
 });
