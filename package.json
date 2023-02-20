@@ -1,10 +1,9 @@
 {
   "name": "expenseapp",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./bin/www",
+  "version": "0.0.1",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node app.js",
     "dev": "DEBUG=expenseapp:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www"
   },
