@@ -31,13 +31,11 @@ server.on("error", (error) => {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case "EACCES":
-      console.error(
-        `Port 5555 requires elevated privileges`
-      );
+      console.error(`Port 8080 requires elevated privileges`);
       process.exit(1);
       break;
     case "EADDRINUSE":
-      console.error(`Port  5555 is already in use`);
+      console.error(`Port  8080 is already in use`);
       process.exit(1);
       break;
     default:
@@ -45,6 +43,6 @@ server.on("error", (error) => {
   }
 });
 
-server.listen( 5555, () => {
-  console.log(`Listening on http://localhost:5555`);
+server.listen(8080, () => {
+  console.log(`Listening on http://localhost:8080`);
 });
